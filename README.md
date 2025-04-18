@@ -106,7 +106,6 @@ Among the four `shortcodes` for gallery, `gstyle02` is simplest and most prefera
 
 To be able to control over which images is inserted, with the same directory structure, use `gstyle04` as follow:
 
-
     {{< gstyle04 tsize="250x" vsize="450x" >}}
     imgname01.jpg
     imgname02.jpg
@@ -115,3 +114,17 @@ To be able to control over which images is inserted, with the same directory str
     {{< /gstyle04 >}}
 
 *tsize* and *vsize* can be omitted.
+
+#### Defining Gallery Page (#333 background-color)
+
+Page style can also be changed by defining `params` in `front matter` as follow:
+
+    +++
+    ...
+    [params]
+        [params.pagestyle]
+            define = 'gallery'
+    ...
+    +++
+
+**Note**: `section page` can NOT be defined as `gallery` because `gallery.css` contains `.singlepage-container`.
