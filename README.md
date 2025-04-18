@@ -42,29 +42,47 @@ Front matter is to define metadata of the document such as `date` (timestamp of 
 
 ## Images
 
-### For Single Image
+There are two `shortcodes` to insert image in page. The following two `shortcodes` can insert at a time. Simply repeat the process to insert multiple images.
+
+1. istyle01 (Global Resource)
+2. istyle02 (Local Resource)
 
 #### istyle01 (Global Resource)
 
-    {{< istyle01 src="images/imgname.jpg" size="350x" link="/path/target" alt="something" class="style-one" >}}
+    {{< istyle01 src="images/imgname.jpg" size="350x" link="/path/target" alt="something" class="image-style-one" >}}
 
 *size*, *link*, *alt* and *class* can be omitted but *src*. see below:
 
     {{< istyle01 src="images/imgname.jpg" >}}
 
+*class* is set to `image-style-one` if *class* is omitted.
+
 #### istyle02 (Local Resource)
 
-    {{< istyle02 src="images/imgname.jpg" size="350x" link="/path/target" alt="something" class="style-one" >}}
+    {{< istyle02 src="imgname.jpg" size="350x" link="/path/target" alt="something" class="image-style-one" >}}
 
 *size*, *link*, *alt* and *class* can be omitted but *src*. see below:
 
-    {{< istyle02 src="images/imgname.jpg" >}}
+    {{< istyle02 src="imgname.jpg" >}}
 
-===
+*class* is set to `image-style-one` if *class* is omitted.
 
-### Multiple Images
+### Gallery
 
-#### Global Resource
+There are four `shortcodes` to display gallery in a page as follows:
+
+1. gstyle01 (Global Resource) using `resources.Match` and `.ResourceType "image"`
+2. gstyle03 (Global Resource) using `resources.Get`
+3. gstyle02 (Local Resource) using `.Page.Resources.ByType "image"`
+4. gstyle04 (Local Resource) using `.Page.Resources.Get`
+
+#### gstyle01 & gstyle03 (Global Resource)
+
+    {{< gstyle01 src="images/photo-collection/*" tsize="250x" vsize="450x" >}}
+
+In above, *tsize* and *vsize* can be omitted except *src*. Put images in a directory under the `assets` directory and match all photo in the directory (named `photo-collection` in above example) with `src="images/photo-collection/*"`.
+
+To be able to control over which images is inserted, use `gstyle03` as follow:
 
     {{< gstyle03 tsize="250x" vsize="450x" >}}
     images/imgname01.jpg
@@ -75,7 +93,19 @@ Front matter is to define metadata of the document such as `date` (timestamp of 
 
 *tsize* and *vsize* can be omitted.
 
-#### Global Resource
+#### gstyle02 & gstyle04 (Local Resource)
+
+    {{< gstyle02 >}}
+
+Among the four `shortcodes` for gallery, `gstyle02` is simplest and most preferable. The key point to be able to use `gstyle02` is creation of page. The page must be `page bundle` which constitutes `branch bundle` and `leaf bundle`. The following example shows creation of `leaf bundle`:
+
+1. create new page `content/en/about/executives/index.md`
+2. put images in `content/en/about/executives` directory
+3. the `{{< gstyle02 >}}` in `index.md` will access *all images* in above directory
+
+
+To be able to control over which images is inserted, with the same directory structure, use `gstyle04` as follow:
+
 
     {{< gstyle04 tsize="250x" vsize="450x" >}}
     imgname01.jpg
