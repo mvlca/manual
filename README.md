@@ -32,7 +32,7 @@ Front matter is to define metadata of the document such as `date` (timestamp of 
     categories = 'CSR'
     tags = 'Misc'
     [params]
-        [params.pagestyle]
+        [params.single]
             define = 'gallery'
     [menus.main]
         parent = 'CSR'
