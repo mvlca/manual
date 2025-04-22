@@ -40,6 +40,11 @@ Front matter is to define metadata of the document such as `date` (timestamp of 
         weight = 10
     +++
 
+
+## Shortcodes
+
+Shortcodes are snippet of code (Hugo) that can perform specific tasks. See [shortcodes list](./pages/shortcodes.md) for all shortcodes. Belows are detail usage:
+
 ## Images
 
 There are two `shortcodes` to insert image in page. The following two `shortcodes` can insert at a time. Simply repeat the process to insert multiple images.

@@ -4,7 +4,7 @@
 
 Image carousel for **global resources**.
 
-### Usage
+Usage Example:
 
     {{< carousel01 size="450x" >}}
     path/to/image1.jpg:link_title:target_link
@@ -16,19 +16,19 @@ Image carousel for **global resources**.
 
 Image carousel for **local resources**.
 
-### Usage
+Usage Example:
 
     {{< carousel02 size="450x" >}}
     path/to/image1.jpg:link_title:target_link
     path/to/image2.jpg:link_title:target_link
     path/to/image3.jpg:link_title:target_link
-    {{< /carousel01 >}}
+    {{< /carousel02 >}}
 
 ## 3. cushtml
 
 To insert HTML in markdown file.
 
-### Usage
+Usage Example:
 
     {{< cushtml >}}
     <div>your html here.</div>
@@ -38,7 +38,7 @@ To insert HTML in markdown file.
 
 To use them in *faq/{pagename}.md* file.
 
-### Usage Example
+Usage Example:
 
     {{< faqpair >}}
     {{< faqques id="lih01-005" >}}
@@ -53,7 +53,7 @@ To use them in *faq/{pagename}.md* file.
 
 To use it in *faq/_index.md* file.
 
-### Usage Example
+Usage Example:
 
     {{< faqgroup gid="qag01" hid="lih01" md="membership" >}}
     Membership
@@ -63,7 +63,7 @@ To use it in *faq/_index.md* file.
 
 Gallery for **global resources** and **matching all**.
 
-### Usage Example
+Usage Example:
 
     {{< gstyle01 src="path/to/*" tsize="250x" vsize="450x" >}}
 
@@ -71,7 +71,7 @@ Gallery for **global resources** and **matching all**.
 
 Gallery for **local resources** and **matching all**.
 
-### Usage Example
+Usage Example:
 
     {{< gstyle02 >}}
 
@@ -79,7 +79,7 @@ Gallery for **local resources** and **matching all**.
 
 Gallery for **global resources** and **selected images**.
 
-### Usage Example
+Usage Example:
 
     {{< gstyle03 tsize="250x" vsize="450x" >}}
     images/imgname01.jpg
@@ -92,7 +92,7 @@ Gallery for **global resources** and **selected images**.
 
 Gallery for **local resources** and **selected images**.
 
-### Usage Example
+Usage Example:
 
     {{< gstyle04 tsize="250x" vsize="450x" >}}
     imgname01.jpg
@@ -109,7 +109,7 @@ Above are obsolete.
 
 To put last pieces of a line in **display: inline-block;**.
 
-### Usage Example
+Usage Example:
 
     ဖြစ်{{< lib "ကြပါသည်။" >}}
 
@@ -117,7 +117,7 @@ To put last pieces of a line in **display: inline-block;**.
 
 Use it in .md file to include content from a nother .md file.
 
-### Usage Example
+Usage Example:
 
     {{< include-md "membership" >}}
 
@@ -125,7 +125,7 @@ Use it in .md file to include content from a nother .md file.
 
 Use it in .md file to include partial template .html file.
 
-### Usage Example
+Usage Example:
 
     {{< include-partial "homebody.html" >}}
 
@@ -133,7 +133,7 @@ Use it in .md file to include partial template .html file.
 
 Insert image from **global resources**.
 
-### Usage Example
+Usage Example:
 
     {{< istyle01 scr="path/to/image.jpg" size="350x" link="target_link" alt="sometext" class="image-style-one" >}}
 
@@ -141,7 +141,7 @@ Insert image from **global resources**.
 
 Insert image from **local resources**.
 
-### Usage Example
+Usage Example:
 
     {{< istyle01 scr="path/to/image.jpg" size="350x" link="target_link" alt="sometext" class="image-style-one" >}}
 
@@ -149,7 +149,7 @@ Insert image from **local resources**.
 
 To put pieces of text and reference No. in **display: inline-block;** and **<sup></sup>** tag.
 
-### Usage Example
+Usage Example:
 
     {{< supref word="some text" link="reference link No." target="target_link" >}}
 
@@ -157,7 +157,7 @@ To put pieces of text and reference No. in **display: inline-block;** and **<sup
 
 Video carousel for **global resources** and **selected videos**.
 
-### Usage Example
+Usage Example:
 
     {{< video-carousel01 >}}
     path/to/vidoe1.mp4:link_title:target_link
@@ -169,7 +169,7 @@ Video carousel for **global resources** and **selected videos**.
 
 Video carousel for **local resources** and **selected videos**.
 
-### Usage Example
+Usage Example:
 
     {{< video-carousel01 >}}
     path/to/vidoe1.mp4:link_title:target_link
@@ -177,3 +177,4 @@ Video carousel for **local resources** and **selected videos**.
     path/to/vidoe3.mp4:link_title:target_link
     {{< /video-carousel01 >}}
 
+see: [README.md](../README.md) for usage details.
