@@ -115,16 +115,78 @@ To be able to control over which images is inserted, with the same directory str
 
 *tsize* and *vsize* can be omitted.
 
-#### Defining Gallery Page (#333 background-color)
+### Carousel Image
 
-Page style can also be changed by defining `params` in `front matter` as follow:
+There are two shortcodes to insert **carousel images**. They are **carousel01** and **carousel02**.
+
+#### carousel01 & carousel01 (Global and Local Resources)
+
+    {{< carousel01 size="650x" >}}
+    path/to/image1.jpg:link_title:target_link
+    path/to/image2.jpg:link_title:target_link
+    path/to/image3.jpg:link_title:target_link
+    {{< /carousel01 >}}
+
+    {{< carousel02 size="650x" >}}
+    path/to/image1.jpg:link_title:target_link
+    path/to/image2.jpg:link_title:target_link
+    path/to/image3.jpg:link_title:target_link
+    {{< /carousel02 >}}
+
+### Carousel Video
+
+There are two shortcodes to insert **carousel videos**. They are **video-carousel01** and **video-carousel02**.
+
+#### carousel01 & carousel01 (Global and Local Resources)
+
+    {{< video-carousel01 size="650x" >}}
+    path/to/image1.jpg:link_title:target_link
+    path/to/image2.jpg:link_title:target_link
+    path/to/image3.jpg:link_title:target_link
+    {{< /video-carousel01 >}}
+
+    {{< video-carousel02 size="650x" >}}
+    path/to/image1.jpg:link_title:target_link
+    path/to/image2.jpg:link_title:target_link
+    path/to/image3.jpg:link_title:target_link
+    {{< /video-carousel02 >}}
+
+### Define & Include
+
+To change special page style or include extra style.
+
+#### Section Page
+
+A section page can only be included. NOT define.
 
     +++
     ...
     [params]
-        [params.pagestyle]
-            define = 'gallery'
+        [params.single]
+            include = 'gallery'
     ...
     +++
 
-**Note**: `section page` can NOT be defined as `gallery` because `gallery.css` contains `.singlepage-container`.
+#### Single Page
+
+Single page can be defined and included for specific style or extra style.
+
+    +++
+    ...
+    [params]
+        [params.single]
+            define = 'gallerypage'
+    ...
+    +++
+
+    +++
+    ...
+    [params]
+        [params.single]
+            include = 'gallery'
+    ...
+    +++
+
+---
+
+*maintained by: msh*
