@@ -168,7 +168,7 @@ A section page can only be included. NOT define.
     ...
     [params]
         [params.single]
-            include = 'gallery'
+            gallery = 'include'
     ...
     +++
 
@@ -188,7 +188,7 @@ Single page can be defined and included for specific style or extra style.
     ...
     [params]
         [params.single]
-            include = 'gallery'
+            gallery = 'include'
     ...
     +++
 
