@@ -1,6 +1,6 @@
 # Shortcodes List
 
-## 1. Carousel01
+## 1. carousel01
 
 Image carousel for **global resources**.
 
@@ -144,6 +144,22 @@ Insert image from **local resources**.
 Usage Example:
 
     {{< istyle01 scr="path/to/image.jpg" size="350x" link="target_link" alt="sometext" class="image-style-one" >}}
+
+## 16. link2
+
+Insert link with `target="_blank"` attribute.
+
+Usage Example:
+
+    {{< link2 href="/your/link/here/" >}}
+
+## 17. static-members
+
+Insert members list (static) from json file.
+
+Usage Example:
+
+    {{< static-members file="filename" >}}
 
 ## 16. supref
 

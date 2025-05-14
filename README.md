@@ -33,7 +33,7 @@ Front matter is to define metadata of the document such as `date` (timestamp of 
     tags = 'Misc'
     [params]
         [params.single]
-            define = 'gallery'
+            alter = 'gallery-page'
     [menus.main]
         parent = 'CSR'
         name = 'Earthquake 2025'
@@ -60,7 +60,7 @@ There are two `shortcodes` to insert image in page. The following two `shortcode
 
     {{< istyle01 src="images/imgname.jpg" >}}
 
-*class* is set to `image-style-one` if *class* is omitted.
+*class* is set to `.image-style-one` if *class* is omitted.
 
 #### istyle02 (Local Resource)
 
@@ -70,7 +70,33 @@ There are two `shortcodes` to insert image in page. The following two `shortcode
 
     {{< istyle02 src="imgname.jpg" >}}
 
-*class* is set to `image-style-one` if *class* is omitted.
+*class* is set to `.image-style-one` if *class* is omitted. See the following CSS:
+
+    .image-style-one,
+    .image-style-two,
+    .image-style-three {
+        max-width: 100%;
+        height: auto;
+        max-height: 100%;
+        display: inline-block;
+        border: 1px solid lightgray;
+    }
+    .image-style-two {
+        float: left;
+        margin-right: 1rem;
+    }
+    .image-style-three {
+        float: right;
+        margin-left: 1rem;
+    }
+    .image-style-four {
+        display: block;
+        aspect-ratio: 2 / 1;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
 
 ### Gallery
 
@@ -138,6 +164,13 @@ There are two shortcodes to insert **carousel images**. They are **carousel01** 
     path/to/image3.jpg:link_title:target_link
     {{< /carousel02 >}}
 
+### Featured Image
+
+To insert a featured image (image in listed block in section page) using the following:
+
+    [params]
+        featured_image = 'image-in-local-resource-dir.jpg'
+
 ### Carousel Video
 
 There are two shortcodes to insert **carousel videos**. They are **video-carousel01** and **video-carousel02**.
@@ -156,31 +189,17 @@ There are two shortcodes to insert **carousel videos**. They are **video-carouse
     path/to/image3.jpg:link_title:target_link
     {{< /video-carousel02 >}}
 
-### Define & Include
+### alter & add
 
-To change special page style or include extra style.
+To change a section or single page to special page style or include extra style.
 
-#### Section Page
-
-A section page can only be included. NOT define.
+#### Altering Page Style
 
     +++
     ...
     [params]
-        [params.single]
-            gallery = 'include'
-    ...
-    +++
-
-#### Single Page
-
-Single page can be defined and included for specific style or extra style.
-
-    +++
-    ...
-    [params]
-        [params.single]
-            define = 'gallerypage'
+        [params.section]
+            alter = 'gallery-page'
     ...
     +++
 
@@ -188,7 +207,25 @@ Single page can be defined and included for specific style or extra style.
     ...
     [params]
         [params.single]
-            gallery = 'include'
+            alter = 'gallery-page'
+    ...
+    +++
+
+#### Adding Extra Style
+
+    +++
+    ...
+    [params]
+        [params.section]
+            add = 'gallery'
+    ...
+    +++
+
+    +++
+    ...
+    [params]
+        [params.single]
+            add = 'executives'
     ...
     +++
 
